@@ -1,0 +1,6 @@
+numpy==1.17.4
+opencv-python==4.1.2.30
+pymongo==3.9.0
+redis==3.3.11
+Flask
+gunicorn
