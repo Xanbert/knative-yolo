@@ -1,9 +1,10 @@
 #change constant in here
 import os
 
-classesfile = "/home/app/darknet/coco.names"
-configfile = "/home/app/darknet/yolov3.cfg"
-weightfile = "/home/app/darknet/yolov3.weights"
+darknet_dir = "./darknet"
+classesfile = darknet_dir + "/coco.names"
+configfile = darknet_dir + "/yolov3.cfg"
+weightfile = darknet_dir + "/yolov3.weights"
 
 REDIS_HOST = os.getenv("redis")
 REDIS_PORT = "6379"
