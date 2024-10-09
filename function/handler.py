@@ -1,4 +1,4 @@
-#hander detection request
+# hander detection request
 
 import cv2 #opencv-python 4.1.1.26 : https://pypi.org/project/opencv-python/
 import base64
@@ -11,7 +11,6 @@ from utils.redisController import redisController
 from utils import globalconstant as gvar
 
 #import os
-
 #save to redis
 '''
 videoname = "yolotest.mp4"

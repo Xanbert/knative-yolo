@@ -6,9 +6,10 @@ from function import handler
 app = Flask(__name__)
 
 
-@app.route('/', method=["POST"])
-def hello_world():
+@app.route('/', methods=["POST"])
+def yolo():
     ret = None
+    print(request.data)
     if request.data:
         ret = handler.handle(request.data)
     if ret == None:
