@@ -1,0 +1,21 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: yolo
+  namespace: yolo
+spec:
+  template:
+    spec:
+      containers:
+      - image: docker.io/xanbert/knative-yolo
+        ports:
+          - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /readiness
+            port: 8080
+        env:
+          - name: redis
+            value: "dev-redis-master"
+          - name: mongodb
+            value: "dev-mongodb"

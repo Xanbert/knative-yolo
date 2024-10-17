@@ -23,7 +23,7 @@ class Yolov3:
 
     def get_output_layers(self,net):
         layer_names = net.getLayerNames()
-        output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+        output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]
         return output_layers
 
 
@@ -73,7 +73,6 @@ class Yolov3:
         indices = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, nms_threshold)
 
         for i in indices:
-            i = i[0]
             box = boxes[i]
             x = box[0]
             y = box[1]

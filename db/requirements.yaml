@@ -1,0 +1,14 @@
+dependencies:
+- name: redis
+  repository: "@stable"
+  version: 9.5.2
+  tags:
+  - redis
+- name: mongodb
+  repository: "@stable"
+  version: 7.4.4
+  tags:
+  - mongodb
+
+  
+

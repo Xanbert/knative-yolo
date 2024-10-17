@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-db
+spec:
+  capacity:
+    storage: 10Gi         
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: /vagrant/data/mongo
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-db1
+spec:
+  capacity:
+    storage: 10Gi         
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: /vagrant/data/redis1
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-db2
+spec:
+  capacity:
+    storage: 10Gi         
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: /vagrant/data/redis2
+
+# kind: StorageClass
+# apiVersion: storage.k8s.io/v1beta1
+# metadata:
+#   name: px-ha-sc
+# provisioner: kubernetes.io/portworx-volume
+# parameters:
+#   repl: "3"
+#   io_profile: "db"
+#   io_priority: "high"
